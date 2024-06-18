@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="article:modified_time" content="2024-06-18T23:09:34+02:00" />
+    <meta property="article:modified_time" content="2024-06-18T23:13:11+02:00" />
     <title>Datasets and Preprocessing &#8212; Analyzing the growth of Schiphol Airport</title>
   
   
@@ -411,11 +411,17 @@ document.write(`
 <h1>Datasets and Preprocessing<a class="headerlink" href="#datasets-and-preprocessing" title="Link to this heading">#</a></h1>
 <p>To give different perspectives on our topic, we had to find multiple datasets. For our final datastory we decided to use the following datasets:</p>
 <p><strong><a class="reference external" href="https://www.schiphol.nl/en/schiphol-group/page/transport-and-traffic-statistics/">Schiphol Airport Monthly Traffic Data 1992-now</a></strong></p>
-<p>The dataset was downloaded directly from Schiphol’s website, which provides neatly structured information about passenger movement, cargo movement and more. Pulling the specific data was not much harder than selecting a certain column in the excel-file and printing it using some lines of code. The YYYY-MM format dates however, had to be hand-written. Luckily, generative tools are allowed which makes this an easy job. With both variables ready, the plot was ready to be generated.</p>
+<p>The graph shows the total aircraft movement for Schiphol Airport, this means that cargo and passenger flights are shown together. This data is very important as we can see the growth of Schiphol and assess its current position in the global aviation industry. The measure of total aircraft movements is a very important one in the aviation world. This is because each airport gets allocated a certain number of flights per year. This graph makes it easy to see how close Schiphol is to that maximum.</p>
 <p><strong><a class="reference external" href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83435NED/table">Amsterdam Airport Schiphol; passagiersvervoer, partnerluchthaven</a></strong></p>
+<p>The dataset used for this world map visualization was sourced from the CBS (Centraal Bureau voor de Statistiek) database. Originally, the dataset contained information on all airports globally, with each airport’s name combined with its respective country in the same cell. This structure presented challenges for analysis and visualization, necessitating comprehensive preprocessing.</p>
+<p>The first step in preprocessing involved separating the airport and country names into distinct columns, transforming the initial 28,512 entries into a more manageable format. Once separated, the data was aggregated by country, summing the passenger numbers for all airports within the same country. This reduced the dataset to 3,915 entries, each representing a single country’s total passenger numbers.</p>
+<p>Following the aggregation, the dataset underwent a thorough cleaning process to ensure accuracy. This included validating country names, ensuring consistent formatting, and checking for any anomalies in passenger numbers. Given that the dataset included Dutch country names, a crucial step was translating these into English to ensure universal understanding and correct mapping in the visualization.</p>
+<p>The final step involved reshaping the dataset from a wide format to a long format suitable for visualization. This entailed converting columns representing different years into rows, making it easier to plot trends over time. By aggregating data at the country level, the visualization became more straightforward, interpretable and highlighted global travel patterns more clearly.</p>
 <p><strong><a class="reference external" href="https://legacy.emissieregistratie.nl/erpubliek/documenten/05%20Verkeer%20en%20vervoer/2017%20(Dellaert%20&amp;amp;%20Hulskotte)%20Emissions%20of%20air%20pollutants%20from%20civil%20avi....pdf">Emissions of air pollutants from civil aviation in the Netherlands</a></strong></p>
+<p>Continuous ratio variables: Take-off, Approach, Climb-out, Idle, APU, Jet Fuel, Aviation gasoline.
+There wasn’t any data processing needed for this dataset.</p>
 <p><strong><a class="reference external" href="https://data.rivm.nl/meta/srv/dut/catalog.search#/metadata/e5bbc648-a743-405f-99ba-5085e4d769c6">Geluidkaart Schiphol 2016 (Lden; 2 klassen) - Atlas Leefomgeving</a></strong></p>
-<p>This dataset contains polygons that represent the noise pollution areas around Schiphol. The data did not need to be preprocessed.</p>
+<p>The dataset includes polygons representing noise pollution areas around Schiphol, requiring no preprocessing.</p>
 </section>
 
     <script type="text/x-thebe-config">
