@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="article:modified_time" content="2024-06-28T13:32:10+02:00" />
+    <meta property="article:modified_time" content="2024-06-28T13:36:55+02:00" />
     <title>Datasets and preprocessing &#8212; Analyzing the growth of Schiphol Airport</title>
   
   
@@ -418,7 +418,7 @@ This dataset shows the total aircraft movement for Schiphol Airport, this means 
 <p><strong><a class="reference external" href="https://opendata.cbs.nl/statline/#/CBS/nl/dataset/83435NED/table">Amsterdam Airport Schiphol; passagiersvervoer, partnerluchthaven</a></strong> <br>
 The dataset used for this world map visualization was sourced from the CBS (Centraal Bureau voor de Statistiek) database. Originally, the dataset contained information on all airports globally, with each airport’s name combined with its respective country in the same cell. This structure presented challenges for analysis and visualization, necessitating comprehensive preprocessing.</p>
 <p>The first step in preprocessing involved separating the airport and country names into distinct columns, transforming the initial 28,512 entries into a more manageable format. Once separated, the data was aggregated by country, summing the passenger numbers for all airports within the same country. This reduced the dataset to 3,915 entries, each representing a single country’s total passenger numbers.</p>
-<p>Discrete nominal variable: <code class="docutils literal notranslate"><span class="pre">Country</span></code>
+<p>Discrete nominal variable: <code class="docutils literal notranslate"><span class="pre">Country</span></code> <br>
 Discrete ratio variable: <code class="docutils literal notranslate"><span class="pre">Passengers</span></code></p>
 <p><strong><a class="reference external" href="https://legacy.emissieregistratie.nl/erpubliek/documenten/05%20Verkeer%20en%20vervoer/2017%20(Dellaert%20&amp;amp;%20Hulskotte)%20Emissions%20of%20air%20pollutants%20from%20civil%20avi....pdf">Emissions of air pollutants from civil aviation in the Netherlands</a></strong><br>
 Continuous ratio variables: Take-off, Approach, Climb-out, Idle, APU, Jet Fuel, Aviation gasoline.
